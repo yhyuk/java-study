@@ -69,3 +69,36 @@ Error : System.out cannot be resolved to a type, Syntax error on token "nt", = e
 
 
 - Solution : print 띄어쓰기를 지운다	
+
+
+### Type(자료형) Error (2)
+
+```
+short s2 = 10;
+byte b2;
+				
+b2 = s2; // 에러 나온 부분
+
+Error : Type mismatch: cannot convert from short to byte
+```
+- Cause : byte는 short보다 작기때문에 대입 불가로 Error 발생
+
+
+- Solution :    
+	-> 1. 크기가 큰것에 작은것을 대입하면 안되고, 크기가 작은 byte를 크기가 큰 short에 대입한다.	  
+	-> 2. 명시적으로 b2 = (byte)s2;
+
+
+### method 오타 Error 
+
+```
+
+System.out.printl();
+
+Error : The method printl(int) is undefined for the type PrintStream
+
+```
+- Cause : println에서 n이 빠짐
+
+
+- Solution : println 수정
