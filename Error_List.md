@@ -102,3 +102,145 @@ Error : The method printl(int) is undefined for the type PrintStream
 
 
 - Solution : println 수정
+
+
+### 실행 시 오류(ArithmeticException) Error
+
+```
+System.out.println(3/0);
+
+java.lang.ArithmeticException: / by zero
+```
+- Cause : 피연산자가 정수형인 경우, 나누는 수로 0을 사용 할 수 없다.
+
+
+- Solution : 값 0 을 다른 수로 변경한다.
+
+
+### 대입 연산자 Error
+
+```
+int i = 0;
+3 = i + 3;
+i + 3 = i;
+
+Error : The left-hand side of an assignment must be a variable
+```
+- Cause : LValue는 리터럴, 상수같이 값을 저장할수 없는 것들은 올 수 없다.
+
+
+- Solution :   
+	-> 3 = i + 3; 에서 LValue은 3이므로,값을 저장할 수 있는 공간이 아님.   
+	-> i + 3 = i; 에서 LValue은 i+3이므로 연산결과가 리터럴   
+	-> 두 코드 전부 삭제
+	
+
+### 입력 값 공백 Error
+
+```
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+System.out.print("숫자 입력 : ");
+int num = Integer.parseInt(reader.readLine());
+
+Error : java.lang.NumberFormatException: For input string: " "
+```
+- Cause : int(정수)값을 입력해야 하는데, 공백을 입력함
+
+
+- Solution : int(정수)값 입력하기   
+
+
+### 변수명 중복 Error
+
+```
+int a;
+int a;
+
+Error : Exception in thread "main" java.lang.Error: Unresolved compilation problem: Duplicate local variable a
+```
+- Cause : 변수명 a가 중복됨
+
+
+- Solution : 변수명 a 2개 중에 한개를 다른 변수명으로 변경한다.
+
+
+### 메소드 내의 변수 중복 Error
+
+```
+public static void hi(String name) {
+		
+		String name = "홍길동"; // Error : Duplicate local variable name
+		
+		System.out.printf("'%s'님 안녕하세요.\n", name);
+	
+}
+
+Error : Duplicate local variable name
+```
+- Cause : 매소드 hi()의 매개변수가 name 이므로, 메소드 내의 변수 String name과 중복
+
+
+- Solution : 매개변수 name 이나 메소드 내의 변수 name 둘 중에 하나를 변경한다.
+
+
+### 메소드 호출시 Error
+
+```
+hi();
+
+Error : The method hi(String) is not applicable for the arguments ()
+```
+- Cause : 메소드에 String 매개변수(가인자)가 있으므로, 호출시에 hi(); 안에 실인자를 입력 해줘야 한다. 
+
+
+- Solution : hi(); --> ()안에 String 문자열을 입력한다. 
+
+
+### 메소드 선언시 Error
+
+```
+public static int test() {
+
+}
+
+Error : This method must return a result of type int
+```
+- Cause : 메소드의 반환타입이 int로 해줬으므로 반환값(return)을 써야한다.
+
+
+- Solution : 메소드 코드 안에 원하는 int형 return값을 입력한다.
+
+
+### 메소드 return 값 Error (1)
+
+```
+public static void test() {
+	return 100;
+}
+
+Error : Void methods cannot return a value
+```
+- Cause : 메소드의 반환타입이 void이므로 반환값이 없어야 한다.
+
+
+- Solution : return값을 지우거나, 반환타입을 void에서 원하는 데이터타입을 넣어준다.
+
+
+### 메소드 return 값 Error (2)
+
+```
+public static int test() {
+
+	System.out.println("테스트1");
+	
+	return 100;
+	
+	System.out.println("테스트2"); // Error 발생 부분 
+}
+
+Error : Unreachable code
+```
+- Cause : 매소드의 반환타입이 int이므로 return값 이후에 오는 코드는 실행되지 않는다.
+
+
+- Solution : 맨밑의 코드를 지우거나 return값 위로 수정한다.
