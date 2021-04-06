@@ -244,3 +244,22 @@ Error : Unreachable code
 
 
 - Solution : 맨밑의 코드를 지우거나 return값 위로 수정한다.
+
+
+### 재귀 메소드 Error
+
+```
+public static void test();{
+	
+	System.out.println("TEST");
+	test();
+}
+
+Error 발생 : StackOverflowError
+```
+- Cause : 자기 자신 메소드안에 자기를 호출로 print("TEST") 계속 출력(무한 루프) 하다가 StackOverflow 발생
+
+
+- Solution : 호출 스택에 함수 공간이 계속 쌓여서 문제가 생기므로, 함수 공간이 쌓이지 않도록 한다.  
+	-> 반환값을 넣어줘서 스택공간을 사라지게 한다.
+	-> 꼬리 재귀
