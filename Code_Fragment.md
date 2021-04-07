@@ -81,3 +81,14 @@ class() {
 	} 
 }
 ```
+
+#### 3항연산자 ( ? : )
+```
+String str;
+String result = (str == "A") "B" : "C";
+
+System.out.println(result)
+// str이 A와 똑같을때 B를 출력
+// str이 A와 다르다면 C를 출력
+// 3항연산자는 2가지 값 형태로 boolean(true, false)이다. 
+``` 
