@@ -223,6 +223,9 @@ Error : Void methods cannot return a value
 - Cause : 메소드의 반환타입이 void이므로 반환값이 없어야 한다.
 
 
+
+
+
 - Solution : return값을 지우거나, 반환타입을 void에서 원하는 데이터타입을 넣어준다.
 
 
@@ -263,3 +266,34 @@ Error 발생 : StackOverflowError
 - Solution : 호출 스택에 함수 공간이 계속 쌓여서 문제가 생기므로, 함수 공간이 쌓이지 않도록 한다.  
 	-> 반환값을 넣어줘서 스택공간을 사라지게 한다.
 	-> 꼬리 재귀
+
+
+### 산술 연산자 Error
+```
+Calendar now = Calendar.getInstance();
+Calendar birthday = Calendar.getInstance();
+birthday.set(1995, 11, 28, 15, 30, 50);
+
+System.out.println(now - birthday); // Error 발생
+
+Error : The operator - is undefined for the argument type(s) java.util.Calendar, java.util.Calendar	
+```
+- Cause : 산술 연산자에서 피연산자는 원시형밖에 가질 수 없는데(특히 숫자형만 가능), 참조형이 들어감	
+
+
+- Solution : println() 안에있는 산술 연산자를 제거 하거나, 피연산자를 원시형(숫자형)으로 변환한다.  
+
+
+### 가운데 줄표시 Error
+```
+Date now = new Date();
+
+System.out.println(now.getHours());  // getHours에 밑줄의미는 위에서 말한 deprecated(소멸 예정)
+System.out.println(now.getMinutes());
+
+Error : The method getHours() from the type Date is deprecated
+```
+- Cause : 곧 소멸될 메소드 이므로, 변경 권함
+
+
+- Solution : 컴파일, 프로그램 에러는 아니므로 수정은 할 필요없지만, 추후 나중을 위해서 다른 방식으로 하는게 더 좋다.  
