@@ -297,3 +297,26 @@ Error : The method getHours() from the type Date is deprecated
 
 
 - Solution : 컴파일, 프로그램 에러는 아니므로 수정은 할 필요없지만, 추후 나중을 위해서 다른 방식으로 하는게 더 좋다.  
+
+
+### if 결합순서 Error
+
+```
+int age = 25;
+
+if (19 <= age < 60) { //Error 발생 line
+	
+}
+
+Error : The operator < is undefined for the argument type(s) boolean, int
+```
+
+
+- Cause : 
+	- 19 <= age < 60    
+	- true(19<=age) < 60    
+	- -> error
+
+
+- Solution : 조건식 변경 (age >= 19 && age < 60) 
+	- age라는 주최가 앞으로 오는것이 바람직하다.
