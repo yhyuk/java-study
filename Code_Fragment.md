@@ -92,3 +92,27 @@ System.out.println(result)
 // str이 A와 다르다면 C를 출력
 // 3항연산자는 2가지 값 형태로 boolean(true, false)이다. 
 ``` 
+
+#### if 조건문 (1)
+```
+if (조건식) {
+	실행문;
+} else {
+	실행문;
+}
+```
+
+#### switch 조건문 (2)
+```
+switch (조건) {
+	case 값:
+		 실행문;
+		 break;
+	[case 값:
+		 실행문;
+		 break;] * N (여러개 쓸 수 있다.)
+	[default:
+		실행문;
+		break;]
+ }
+```
