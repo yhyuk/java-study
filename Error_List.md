@@ -1,4 +1,4 @@
-# JAVA Error List
+# Java Error Note
 
 ---
 ### ;(세미콜론) Error
@@ -26,9 +26,9 @@ Error : BufferedReader cannot be resolved to a type
 
 
 - Solution : 필요한 클래스를 import 해서 가져온다.  
-	-> import java.io.*; 입력, 또는 밑의 2개의 코드 입력   
-	-> import java.io.BufferedReader;      
-	-> import java.io.InputStreamReader;
+	- import java.io.*; 입력, 또는 밑의 2개의 코드 입력   
+	- import java.io.BufferedReader;      
+	- import java.io.InputStreamReader;
 	
 
 ### Exception(예외처리) Error
@@ -42,10 +42,10 @@ Error : Unhandled exception type IOException
 
 
 - Solution : main 코드 끝에 throws IOException를 입력 시킨다.  
-	-> public static void main(String[] args) throws IOException
+	- public static void main(String[] args) throws IOException
 
 
-### Type(자료형) Error
+### Type(자료형) Error (1)
 
 ```
 int num1 = reader.readLine();
@@ -85,14 +85,13 @@ Error : Type mismatch: cannot convert from short to byte
 
 
 - Solution :    
-	-> 1. 크기가 큰것에 작은것을 대입하면 안되고, 크기가 작은 byte를 크기가 큰 short에 대입한다.	  
-	-> 2. 명시적으로 b2 = (byte)s2;
+	- 1. 크기가 큰것에 작은것을 대입하면 안되고, 크기가 작은 byte를 크기가 큰 short에 대입한다.	  
+	- 2. 명시적으로 b2 = (byte)s2;
 
 
 ### method 오타 Error 
 
 ```
-
 System.out.printl();
 
 Error : The method printl(int) is undefined for the type PrintStream
@@ -130,9 +129,9 @@ Error : The left-hand side of an assignment must be a variable
 
 
 - Solution :   
-	-> 3 = i + 3; 에서 LValue은 3이므로,값을 저장할 수 있는 공간이 아님.   
-	-> i + 3 = i; 에서 LValue은 i+3이므로 연산결과가 리터럴   
-	-> 두 코드 전부 삭제
+	- 3 = i + 3; 에서 LValue은 3이므로,값을 저장할 수 있는 공간이 아님.   
+	- i + 3 = i; 에서 LValue은 i+3이므로 연산결과가 리터럴   
+	- 두 코드 전부 삭제
 	
 
 ### 입력 값 공백 Error
@@ -223,9 +222,6 @@ Error : Void methods cannot return a value
 - Cause : 메소드의 반환타입이 void이므로 반환값이 없어야 한다.
 
 
-
-
-
 - Solution : return값을 지우거나, 반환타입을 void에서 원하는 데이터타입을 넣어준다.
 
 
@@ -264,9 +260,9 @@ Error 발생 : StackOverflowError
 
 
 - Solution : 호출 스택에 함수 공간이 계속 쌓여서 문제가 생기므로, 함수 공간이 쌓이지 않도록 한다.  
-	-> 반환값을 넣어줘서 스택공간을 사라지게 한다.
-	-> 꼬리 재귀
-
+	- 반환값을 넣어줘서 스택공간을 사라지게 한다.
+	- 꼬리 재귀
+	
 
 ### 산술 연산자 Error
 ```
@@ -299,7 +295,7 @@ Error : The method getHours() from the type Date is deprecated
 - Solution : 컴파일, 프로그램 에러는 아니므로 수정은 할 필요없지만, 추후 나중을 위해서 다른 방식으로 하는게 더 좋다.  
 
 
-### if 결합순서 Error
+### if 결합순서 Error 
 
 ```
 int age = 25;
@@ -310,8 +306,6 @@ if (19 <= age < 60) { //Error 발생 line
 
 Error : The operator < is undefined for the argument type(s) boolean, int
 ```
-
-
 - Cause : 
 	- 19 <= age < 60    
 	- true(19<=age) < 60    
@@ -320,3 +314,22 @@ Error : The operator < is undefined for the argument type(s) boolean, int
 
 - Solution : 조건식 변경 (age >= 19 && age < 60) 
 	- age라는 주최가 앞으로 오는것이 바람직하다.
+	
+
+### 초기화 error	
+	
+```
+int a;
+for(int i=1; i<=10; i++) {
+	
+	a = a + i; // Error 발생 line
+
+}
+Error : The local variable sum may not have been initialized	
+```
+- Cause : 정수형 변수 a값을 초기화를 안함
+
+
+- Solution : int a;를 int a=0; 으로 초기화하거나 값을 넣어준다.
+	
+	
