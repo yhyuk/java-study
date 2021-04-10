@@ -2,8 +2,8 @@
 
 #### 변수 선언하기
 ```
-//자료형 변수명 	= 상수;
-int 	a  	= 10;
+//자료형 변수명 = 상수;
+int a = 10;
 ```
 
 #### 개행하기(라인 바꾸기)
@@ -58,9 +58,9 @@ class() {
 		코드입력
 		return 코드;
 	} 
-	// 반환값이 있다면 int, double... 
-	// 반환값이 없다면 void
-	// 반환값이 있다면 return 값 설정 
+	// 반환값이 있다면 public static int, double... 
+	// 반환값이 없다면 public static void
+	// 반환값이 있다면 마지막 줄return 값 설정 
 }
 ```
 
@@ -70,22 +70,20 @@ class() {
 
 	main() {
 	
-		메소드명(실인자); //호출
-		//실인자가 없다면 메소드명();
-		//main에서 선언한 변수를 메소드와 대입하려면 데이터타입이 같아야함
-	
+		메소드명(실인자);  	//호출
+								//실인자가 없다면 메소드명();
+								//main에서 선언한 변수를 메소드와 대입하려면 데이터타입이 같아야함
 	}
 	
 	public static 반환값 메소드명(가인자변수) {
-	
 		코드입력
 		return 코드;
-		
 	} 
 }
 ```
 
 #### 3항연산자 ( ? : )
+
 ```
 String str;
 String result = (str == "A") "B" : "C";
@@ -94,11 +92,28 @@ System.out.println(result)
 // str이 A와 똑같을때 B를 출력
 // str이 A와 다르다면 C를 출력
 // 3항연산자는 2가지 값 형태로 boolean(true, false)이다. 
-``` 
+```
 
 #### if 조건문 (1)
 ```
+1. if - else
 if (조건식) {
+	실행문;
+} else {
+	실행문;
+}
+
+2. if - else if
+if (조건식) {
+	실행문;
+} else if (조건식) {
+	실행문;
+}
+
+3. if - else if - else
+if (조건식) {
+	실행문;
+} else if (조건식) {
 	실행문;
 } else {
 	실행문;
@@ -114,8 +129,19 @@ switch (조건) {
 	[case 값:
 		 실행문;
 		 break;] * N (여러개 쓸 수 있다.)
-	[default:
+	default: //if문의 else절과 같은 역할
 		실행문;
-		break;]
+		break;
  }
+```
+
+#### for 반복문
+```
+for (초기식; 조건식; 증감식) {
+	
+	실행문;
+	
+}
+//실행문안에 분기문(break, continue) 및 조건문(if, switch) 사용가능
+//초기식, 조건식, 증감식을 사용안하고 for(;;) 하게되면 무한루프
 ```
