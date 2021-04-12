@@ -333,3 +333,18 @@ Error : The local variable sum may not have been initialized
 - Solution : int a;를 int a=0; 으로 초기화하거나 값을 넣어준다.
 	
 	
+### index 범위초과 Error
+
+```
+String txt = "안녕하세요";
+
+for (int i=0; i<14; i++) { 
+	System.out.println(txt.charAt(i));
+}
+
+Error : Exception in thread "main" java.lang.StringIndexOutOfBoundsException: index 5, length 5
+```
+- Cause : charAt()가 범위에서 벗어남.
+
+
+- Solution : txt안에 있는 문자를 조건식 i<14; 보다 증가를 시키거나, 조건식 i<14;을 i<5로 변경한다. 
