@@ -145,3 +145,29 @@ for (초기식; 조건식; 증감식) {
 //실행문안에 분기문(break, continue) 및 조건문(if, switch) 사용가능
 //초기식, 조건식, 증감식을 사용안하고 for(;;) 하게되면 무한루프
 ```
+
+#### while 반복문
+```
+while (조건식) {
+	실행문;
+}
+```
+
+#### 문자열 길이 구하기 (int length())
+```
+String txt = "ABCDEF"
+System.out.println(txt.length());
+
+----> "ABCDEF"의 문자길이 6 출력
+```
+
+#### 문자열에서 문자 추출 방법 (char charAt(int index))
+```
+String txt = "ABCDEF"
+System.out.println(txt.charAt(4);
+
+----> "ABCDEF"의 4번째에 위치한 E 출력
+
+//컴퓨터는 0부터 시작한다.
+//for문에 이용하게 되면 i값을 0으로 해두는게 좋다.
+```
