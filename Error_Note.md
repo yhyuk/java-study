@@ -348,3 +348,32 @@ Error : Exception in thread "main" java.lang.StringIndexOutOfBoundsException: in
 
 
 - Solution : txt안에 있는 문자를 조건식 i<14; 보다 증가를 시키거나, 조건식 i<14;을 i<5로 변경한다. 
+
+
+### 원시형, 참조형 간의 형변환 Error
+
+```
+char c = 'A'; //값형, 원시형
+String s = "A"; //참조형
+		
+System.out.println((int)c);
+System.out.println((int)s); //Error 발생 line
+Error : Cannot cast from String to int
+```
+- Cause : 문자열로부터는 형변환을 통해서 문자코드값을 얻어낼 수 없다.
+
+
+- Solution : String s 의 문자열 값을 구하려면 charAt()을 이용한다.
+
+
+### 배열 크기 Error
+```
+int[] test = new int[10]; // 0~9
+System.out.println(test[10]) // 값 존재안하기 떄문에 런타임 에러 발생
+
+Error : Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10
+```
+- Cause : test의 배열 방의 개수 범위 초과
+
+
+- Solution : 컴퓨터는 0부터 읽기때문에 배열의 크기를 [11]로 수정하거나 출력 값을 test[9]로 줄인다.
