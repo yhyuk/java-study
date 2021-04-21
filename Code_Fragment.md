@@ -171,3 +171,60 @@ System.out.println(txt.charAt(4);
 //컴퓨터는 0부터 시작한다.
 //for문에 이용하게 되면 i값을 0으로 해두는게 좋다.
 ```
+
+#### System.arraycopy() 배열의 복사
+```
+System.arraycopy(num, 0, newNum, 0, num.length);
+//num[0] 에서 newNum[0]으로 num.length개의 데이터를 복사
+```
+
+#### enum() 열거형
+```
+/*
+ *  열거형, Enumeration
+ *  - 클래스의 일종(자료형)
+ *  - 열거값을 가지는 자료형 > 사용자가 임의의 값을 생성할 수 없고,
+ *    주어진 값들 중 1개를 선택해서 사용 가능한 자료형
+ * 	
+ */
+ 
+public static void main() {
+
+	Test temp1 = Test.aaa;
+	Test temp2 = Test.bbb;
+	
+	System.out.println(temp1)
+	System.out.println(temp2)
+}
+
+enum Test { //변수만 가질수 있음 (자료형X, 값X, 이름 O)
+	aaa,
+	bbb,
+	ccc,
+	ddd,
+}
+```
+
+#### final 수정불가
+```
+/*
+ *  final
+ *  - 값을 한번 초기화 한 뒤에는 수정불가
+ *  - 변수/메소드/클래스 적용가능
+ *  - 상수명(final 변수명)은 되도록 대문자로 작성.
+ */
+ 
+//변수
+final int A = 10;
+
+//메소드
+public final static int TEST {
+	//나중에 수정 불가한 코드
+}
+
+//클래스
+final class TEST {  //더이상 자식을 가질수 없는 최종 클래스.
+}
+```
+
+
