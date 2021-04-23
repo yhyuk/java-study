@@ -1,6 +1,8 @@
 package com.test.java.collection;
 
-import java.util.ArrayList;
+import java.util.*;
+
+import com.sun.jmx.mbeanserver.Util;
 
 public class Ex61_ArrayList {
 
@@ -26,7 +28,7 @@ public class Ex61_ArrayList {
 		 *  - 첨자(index)를 사용해서 요소(Element)에 접근/제어
 		 * 
 		 */
-		
+			
 		
 		
 		//m1();
@@ -52,11 +54,13 @@ public class Ex61_ArrayList {
 		list.add("연두");
 		list.add("주황");
 		
+		
 		/*
 		 *  2. 요소의 갯수
 		 *  - int size()
 		 */
 		System.out.println(list.size());
+		
 		
 		/*
 		 *  3. 요소의 접근
@@ -68,6 +72,7 @@ public class Ex61_ArrayList {
 		
 		System.out.println(list.get(list.size()-1));
 		
+		
 		/*
 		 *  4. 요소의 수정
 		 *  - list[0] = 100
@@ -78,6 +83,7 @@ public class Ex61_ArrayList {
 		String oldValue = list.set(2, "Blue");
 		list.set(2, "Blue");
 		System.out.println(list.get(2));
+		
 		
 		/* 
 		 *  5. 요소의 삭제
@@ -105,6 +111,7 @@ public class Ex61_ArrayList {
 			System.out.println(color);
 		}
 		
+		
 		/*
 		 *  6. 요소 추가
 		 *  - 삽입(Insert)
@@ -120,6 +127,67 @@ public class Ex61_ArrayList {
 		for (String color : list) {
 			System.out.println(color);
 		}
+		
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("< 현재 상태 >");
+		for (String color : list) {
+			System.out.println(color);
+		}
+		System.out.println();
+		System.out.println();
+		
+		
+		/**
+		 *  7. 검색
+		 *  - 요소값 검색
+		 *  - boolean contains(T Value) : 있다? 없다?
+		 *  - int indexOf(T Value) : 몇번째? (방향 : -> )
+		 *  - int lastIndexOf(T Value) : 몇번째? (방향 : <- )
+		 *  
+		 */
+		System.out.println("< ArrayList 검색 >");
+		System.out.println(list.contains("노랑"));
+		System.out.println(list.indexOf("노랑")); 
+		//-->시작위치를 따로 지정해주는 오버로딩은 없다. 
+		//-->중복값이 있더라도 첫번째 값만 보여준다.
+		System.out.println(list.lastIndexOf("노랑"));
+		System.out.println();
+		System.out.println();
+		
+		
+		/*
+		 *  8. 초기화
+		 *  - 모든 방을 삭제 (처음상태로 만듬, 초기화)
+		 */
+		list.clear();	 					//원래 배열을 초기화
+		//list = new ArrayList<String>(); 	//새로운 배열로 덮어쓰기
+		
+		System.out.println("< ArrayList 초기화");
+		System.out.println(list.size());
+		System.out.println();
+		System.out.println();
+		
+		/*
+		 *  9. 빈배열 확인
+		 */
+		System.out.println("< ArrayList 빈배열 확인 >");
+		System.out.println(list.size() == 0); //비어있는지 확인(true, false)
+		System.out.println(list.isEmpty());	  //비어있는지 확인(true, false) ArrayList전용
+		
+		
+		//----------------------------------------------------------
+		
+		//List interface : java.util.List 인터페이스
+		//ArrayList Class : java.util.classArrayList 클래스 
+		
+		ArrayList<String> a1 = new ArrayList<String>();
+		//List<String> a2 = new List<String>();
+		
+		List<String> a2 = new ArrayList<String>(); //부모interface = 자식 객체 --> 업캐스팅 
+		//** 결론 : 인터페이스를 상속받은 클래스의 객체는 인터페이스 변수에 담아서 사용하는 경우가 많다.
+		
 	}
 
 	private static void m2() {
@@ -135,7 +203,6 @@ public class Ex61_ArrayList {
 		for (int i=0; i<list1.size(); i++) {
 			System.out.println(list1.get(i));
 		}
-		
 		
 		
 		ArrayList<Integer> list2 = new ArrayList<Integer>(); //제네릭 버전
@@ -216,6 +283,10 @@ public class Ex61_ArrayList {
 		for (Object n : num2) {
 			System.out.println((int)n);
 		}
+		
+		List<String> list = new ArrayList<String>();
+
+		
 	}
 	
 }
