@@ -48,7 +48,7 @@ public class Ex65_HashMap {
 		System.out.println(map.get("영어")); //90
 		
 		System.out.println(map.isEmpty()); //방이 비어 있니?
-		
+
 		map.remove("국어");
 		System.out.println(map.get("국어"));
 		
