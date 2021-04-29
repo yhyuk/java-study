@@ -20,7 +20,7 @@ public class Q007 {
 		
 		ArrayList<String> list = new ArrayList<String>();
 		
-		//중복 노래
+		System.out.println("■■■■■■■■■■■■■ 중복된노래 ■■■■■■■■■■■■■");
 		for (File fileA : listA) {
 			for (File fileB : listB) {
 				if (fileA.getName().equals(fileB.getName())) {
@@ -32,7 +32,7 @@ public class Q007 {
 		System.out.println();
 		System.out.println();
 
-		//중복 제외 A
+		System.out.println("■■■■■■■■■■■■■ 중복없는 A ■■■■■■■■■■■■■");
 		for (File fileA : listA) {
 			boolean isExist=false;
 			for (String name : list) {
@@ -47,7 +47,7 @@ public class Q007 {
 		System.out.println();
 		System.out.println();
 		
-		//중복 제외 B
+		System.out.println("■■■■■■■■■■■■■ 중복없는 B ■■■■■■■■■■■■■");
 		for (File fileB : listB) {
 			boolean isExist=false;
 			for (String name : list) {
